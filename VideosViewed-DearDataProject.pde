@@ -15,7 +15,7 @@ float centerZ = 0;
 
 void setup() {
   size(1000, 800, P3D);                          // Window Size
-  windowTitle("Dear Data Project");              // Dear Data Project - Video City
+  windowTitle("Videos Viewed - Dear Data Project");              // Dear Data Project - Video City
 
   days.put("Mon", 0.0);                            // days grid values
   days.put("Tue", 0.0);
@@ -102,6 +102,9 @@ void draw() {
         camZ += 20;
         centerZ += 20;
       }
+      if (key == '#') {
+       save("screenshot.jpeg"); 
+      }
     }
 
     camX = constrain(camX, -250, 700);                  // Clamps Camera Movement
@@ -112,3 +115,4 @@ void draw() {
     centerZ = constrain(centerZ, 0, 900);
   }
 }
+
